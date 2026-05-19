@@ -1,3 +1,5 @@
+import os
+
 import discord
 from openpyxl import Workbook, load_workbook
 from datetime import datetime
@@ -392,6 +394,7 @@ async def painel_registro(ctx):
 
 
 
-bot.run("MTUwNjMxMTIzNTIyNDk5Mzg3Mg.Gjifr-.QKNtHCWs9vD8ezi7-eL5WgLcJ9YkmkWUARwtKo")
+TOKEN = os.getenv("DISCORD_TOKEN") 
+bot.run(TOKEN)
 
  
