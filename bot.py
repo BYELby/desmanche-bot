@@ -390,11 +390,23 @@ async def painel_registro(ctx):
     )
 
 
+from flask import Flask
+from threading import Thread
+import os
 
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot online!"
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
+
+Thread(target=run_web).start()
 
 
 
 TOKEN = os.getenv("DISCORD_TOKEN") 
 bot.run(TOKEN)
-
- 
