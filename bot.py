@@ -193,6 +193,7 @@ bot = discord.Bot(debug_guilds=[ID_SERVIDOR])
 
 @bot.event
 async def on_ready():
+    print("BOT INICIOU")
     print(f"Logado como {bot.user}")
 
 @bot.slash_command(name="conce", description="Registrar veículo de concessionária")
@@ -406,6 +407,10 @@ def run_web():
 
 Thread(target=run_web).start()
 
+Thread(target=run_web).start()
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+print("TOKEN CARREGADO:", TOKEN is not None)
 
 
 TOKEN = os.getenv("DISCORD_TOKEN") 
